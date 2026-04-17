@@ -26,7 +26,7 @@ export default function Footer() {
             <Typography variant="subtitle1" fontWeight="bold" gutterBottom>Contact Support</Typography>
             <Typography variant="body2" sx={{ opacity: 0.7 }}>
               Hotlines: +63 920 964 6468 | +63 917 516 6468<br />
-              Email: thirdygoldenmaster@gmail.com
+              Email: sales@thirdygoldenmaster.com
             </Typography>
           </Grid>
         </Grid>

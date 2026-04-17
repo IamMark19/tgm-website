@@ -58,7 +58,7 @@ export default function TopBar() {
             <Stack direction="row" alignItems="center" spacing={0.5}>
               <Email sx={{ fontSize: 14, color: 'secondary.main' }} />
               <Typography variant="caption" sx={{ fontSize: { xs: '0.7rem', md: '0.75rem' } }}>
-                thirdygoldenmaster@gmail.com
+                sales@thirdygoldenmaster.com
               </Typography>
             </Stack>
 
