@@ -111,7 +111,7 @@ export default function Navbar() {
               <Button 
                 variant="contained" 
                 color="secondary" 
-                onClick={() => handleScroll('footer')}
+                onClick={() => handleScroll('quotation')}
                 sx={{ 
                   fontWeight: '900', 
                   display: { xs: 'none', md: 'inline-flex' },
@@ -168,7 +168,7 @@ export default function Navbar() {
               fullWidth 
               variant="contained" 
               color="secondary" 
-              onClick={() => handleScroll('footer')}
+              onClick={() => handleScroll('quotation')}
               sx={{ fontWeight: '900', py: 1.5, borderRadius: 2 }}
             >
               INQUIRE NOW
