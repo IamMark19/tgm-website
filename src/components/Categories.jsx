@@ -86,7 +86,7 @@ export default function Categories() {
 
   const handleInquiry = () => {
     handleClose();
-    document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('quotation').scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

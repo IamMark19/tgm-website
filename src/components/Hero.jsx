@@ -51,7 +51,7 @@ export default function Hero() {
               {/* Jumps to Contact Section */}
               <Button 
                 variant="outlined" 
-                onClick={() => scrollToSection('contact-us')}
+                onClick={() => scrollToSection('quotation')}
                 sx={{ 
                   color: 'white', 
                   borderColor: 'white', 

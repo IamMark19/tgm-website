@@ -15,7 +15,6 @@ const navItems = [
   { name: 'CORE ACTIVITY', id: 'core-activities' },
   { name: 'PRODUCTS', id: 'products' },
   { name: 'WHY CHOOSE US', id: 'solutions' },
-//   { name: 'PROJECTS', id: 'projects' },
   { name: 'CONTACT US', id: 'footer' }
 ];
 

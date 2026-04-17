@@ -124,7 +124,7 @@ export default function Contact() {
                 Request a Quotation
               </Typography>
               
-              <Box component="form" onSubmit={handleSubmit}>
+              <Box id='quotation' component="form" onSubmit={handleSubmit}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6}>
                     <StyledTextField fullWidth label="Full Name" required />

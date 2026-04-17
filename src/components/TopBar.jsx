@@ -4,7 +4,7 @@ import { Phone, Email, LocationOn } from '@mui/icons-material';
 
 export default function TopBar() {
   return (
-    <Box sx={{ bgcolor: 'primary.main', color: 'white', py: 1, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+    <Box id='home' sx={{ bgcolor: 'primary.main', color: 'white', py: 1, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
       <Container maxWidth="xl">
         <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" spacing={1}>
           <Typography variant="caption">SEC Reg No: 2023090117463-06 | BIR TIN: 671-292-736-000</Typography>
