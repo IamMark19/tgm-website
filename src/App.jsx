@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CoreActivities from './components/CoreActivities';
 import Categories from './components/Categories';
-import Brands from './components/Brands';       // Added
+
 import Solutions from './components/Solutions';
 // import Projects from './components/Projects';   // Added
 import Footer from './components/Footer';
