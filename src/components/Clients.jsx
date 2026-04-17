@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Paper, Tooltip } from '@mui/material';
+import { Box, Container, Typography, Grid, Paper, Tooltip, useTheme, useMediaQuery } from '@mui/material';
 
 const clients = [
   { 
@@ -25,23 +25,27 @@ const clients = [
 ];
 
 export default function Clients() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box id='clients' sx={{ 
-      py: { xs: 10, md: 15 }, // Increased vertical padding for a "bigger" feel
+      py: { xs: 10, md: 15 }, 
       bgcolor: '#ffffff', 
-      borderBottom: '1px solid #f0f0f0' 
+      borderBottom: '1px solid #f0f0f0',
+      overflow: 'hidden' // Prevents any horizontal scroll issues
     }}>
-      <Container maxWidth="xl"> {/* Wider container */}
+      <Container maxWidth="xl">
         <Typography 
           variant="overline" 
           align="center" 
           display="block" 
           sx={{ 
-            mb: 8, // More space below the title
+            mb: { xs: 6, md: 8 }, 
             color: 'text.secondary', 
             fontWeight: 800, 
-            letterSpacing: 4, // Increased letter spacing
-            fontSize: '1rem' // Larger font for the label
+            letterSpacing: 4, 
+            fontSize: '1rem' 
           }}
         >
           OUR VALUED CLIENTS
@@ -49,33 +53,42 @@ export default function Clients() {
         
         <Grid 
           container 
-          spacing={{ xs: 4, md: 8 }} // Much larger spacing between logos
+          spacing={{ xs: 3, md: 6 }} // Balanced spacing for mobile
           justifyContent="center" 
-          alignItems="center"
+          alignItems="stretch" // Ensures all cards in a row have the same height
         >
           {clients.map((client) => (
-            <Grid item xs={12} sm={6} md={3} key={client.name} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Tooltip title={client.fullName} arrow>
+            <Grid 
+              item 
+              xs={12} // Full width on mobile
+              sm={6} 
+              md={3} 
+              key={client.name} 
+              sx={{ display: 'flex' }} // Important: allows the Paper to fill the grid item height
+            >
+              <Tooltip title={client.fullName} arrow disableHoverListener={isMobile}>
                 <Paper
                   elevation={0}
                   sx={{
-                    p: 4, // Increased internal padding
-                    width: '100%',
-                    maxWidth: '300px', // Increased max width for logos
-                    height: '180px', // Increased height
+                    p: { xs: 6, md: 4 }, // Extra padding on mobile to make cards feel "big"
+                    width: '100%', // ACHIEVE FULL WIDTH
+                    maxWidth: { xs: '100%', sm: '400px', md: '300px' }, // Maximized on mobile
+                    height: { xs: '200px', md: '180px' }, // Uniform height
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    bgcolor: 'transparent',
-                    filter: 'grayscale(100%)',
-                    opacity: 0.5,
+                    bgcolor: '#fcfcfc', // Light background so the card shape is visible
+                    border: '1px solid #f0f0f0',
+                    filter: isMobile ? 'none' : 'grayscale(100%)', // Grayscale looks better on desktop hover
+                    opacity: isMobile ? 1 : 0.6,
                     transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                     cursor: 'pointer',
                     '&:hover': {
                       filter: 'grayscale(0%)',
                       opacity: 1,
-                      transform: 'scale(1.15)', // Stronger zoom effect
-                      bgcolor: 'rgba(212, 175, 55, 0.03)', // Subtle gold tint on hover
+                      transform: 'translateY(-8px)',
+                      boxShadow: '0 20px 40px rgba(10, 25, 47, 0.08)',
+                      borderColor: '#d4af37',
                       borderRadius: '20px'
                     }
                   }}
@@ -87,13 +100,13 @@ export default function Clients() {
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.parentNode.innerHTML = `
-                        <span style="font-weight:900; color:#0A192F; font-size: 1.5rem; text-align:center; letter-spacing:1px;">
+                        <span style="font-weight:900; color:#0A192F; font-size: 1.5rem; text-align:center; letter-spacing:1px; width:100%;">
                           ${client.name}
                         </span>`;
                     }}
                     sx={{
-                      maxWidth: '90%', // Logo fills more of the container
-                      maxHeight: '80%',
+                      maxWidth: '85%',
+                      maxHeight: '75%',
                       objectFit: 'contain'
                     }}
                   />

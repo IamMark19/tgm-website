@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  Box, Container, Typography, Grid, Card, CardContent, Chip, Stack,
-  Dialog, DialogTitle, DialogContent, IconButton, Button, List, ListItem, 
-  ListItemIcon, ListItemText, Avatar, Divider 
+  Box, Container, Typography, Grid, Card, CardContent, Stack,
+  Dialog, DialogTitle, DialogContent, IconButton, CardMedia,
+  useTheme, useMediaQuery 
 } from '@mui/material';
 import { 
   Security, SettingsInputComponent, PrecisionManufacturing, Window,
-  Inventory, Close as CloseIcon, CheckCircle as CheckIcon, ArrowForward as ArrowIcon 
+  Inventory, Close as CloseIcon 
 } from '@mui/icons-material';
 
 const productData = [
@@ -14,61 +14,53 @@ const productData = [
     id: 'security',
     category: 'Security & Surveillance',
     icon: <Security sx={{ fontSize: 40 }} />,
-    shortDesc: 'X-ray Baggage Scanners, Metal Detectors, and CCTV.',
-    details: 'Globally certified security solutions for high-traffic environments. We offer both Sales and Rental options for scanning equipment.',
+    shortDesc: 'X-ray Baggage Scanners, Metal Detectors, and CCTV Systems.',
+    details: 'Globally certified security solutions for high-traffic environments. High-performance scanning and detection technology.',
     items: [
-      { name: 'X-ray Baggage Scanners', specs: 'Sales & Rental available', img: 'https://images.unsplash.com/photo-1590402444811-bfee29d1df67?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Walk-Through Metal Detectors', specs: '33-zone high sensitivity', img: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=300' },
-      { name: 'CCTV & Body-Worn Cameras', specs: '4K IP & EIS stabilized', img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Perimeter Access Control', specs: 'Biometric & Gate solutions', img: 'https://images.unsplash.com/photo-1510511459019-5dee211c6fe2?auto=format&fit=crop&q=80&w=300' }
+      { name: 'X-ray Baggage Scanners', specs: 'Dual-view / Single-view options', img: 'http://googleusercontent.com/image_collection/image_retrieval/10822366264460149617_0' },
+      { name: 'Walk-Through Metal Detectors', specs: '33-zone high sensitivity', img: 'http://googleusercontent.com/image_collection/image_retrieval/1835039443100430874_0' },
+      { name: 'CCTV Systems', specs: '4K IP & Thermal Imaging', img: 'http://googleusercontent.com/image_collection/image_retrieval/18256075429679014611_0' }
     ]
   },
   {
     id: 'ict',
     category: 'ICT & Electronics',
     icon: <SettingsInputComponent sx={{ fontSize: 40 }} />,
-    shortDesc: 'Networking, Smart City, and Server Solutions.',
-    details: 'Enterprise-grade ICT infrastructure and digital solutions designed to modernize Philippine organizations.',
+    shortDesc: 'Enterprise Networking, Smart City, and Server Solutions.',
+    details: 'Modernizing infrastructure with high-speed networking and IoT integrations.',
     items: [
-      { name: 'Smart City & Traffic Systems', specs: 'IoT & Transport solutions', img: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Networking & Infrastructure', specs: 'Switches, Fiber, & Wireless', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Servers & Storage Systems', specs: 'Data management & Software', img: 'https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?auto=format&fit=crop&q=80&w=300' }
+      { name: 'Smart City Systems', specs: 'IoT Traffic & Lighting', img: 'http://googleusercontent.com/image_collection/image_retrieval/9059464738232550843_0' },
+      { name: 'Server Infrastructure', specs: 'High-density rack solutions', img: 'http://googleusercontent.com/image_collection/image_retrieval/1917646646846251908_0' }
     ]
   },
   {
     id: 'industrial',
     category: 'Industrial & Engineering',
     icon: <PrecisionManufacturing sx={{ fontSize: 40 }} />,
-    shortDesc: 'Testing, Calibration, and Safety Equipment.',
-    details: 'Supporting the engineering sector with high-quality diagnostic instruments and ISO-compliant safety gear.',
+    shortDesc: 'Precision Testing, Calibration, and Industrial Safety Equipment.',
+    details: 'Technical instruments for engineering and maintenance operations.',
     items: [
-      { name: 'Testing & Calibration Tools', specs: 'Precision measuring instruments', img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Industrial Safety Devices', specs: 'Protective gear & PPE', img: 'https://images.unsplash.com/photo-1591955506264-3f5a6834570a?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Engineering Equipment', specs: 'Meters & industrial tools', img: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=300' }
-    ]
-  },
-  {
-    id: 'general',
-    category: 'General Trading Supplies',
-    icon: <Inventory sx={{ fontSize: 40 }} />,
-    shortDesc: 'Office Equipment, Consumables, and Tools.',
-    details: 'A reliable source for essential facility equipment and building materials for various industries.',
-    items: [
-      { name: 'Office & Facility Equipment', specs: 'Corporate supplies & furniture', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Consumables & Tools', specs: 'General facility consumables', img: 'https://images.unsplash.com/photo-1530124560676-4fbc91848b9b?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Construction Supplies', specs: 'Standard building materials', img: 'https://images.unsplash.com/photo-1503387762-5929c69d3978?auto=format&fit=crop&q=80&w=300' }
+      { name: 'Testing Instruments', specs: 'Calibration-ready tools', img: 'http://googleusercontent.com/image_collection/image_retrieval/15504085617401204923_0' }
     ]
   },
   {
     id: 'aluminum',
     category: 'Aluminum & Glass Works',
     icon: <Window sx={{ fontSize: 40 }} />,
-    shortDesc: 'Fabrication, Installation, and Architectural Metal.',
-    details: 'Custom industrial and commercial aluminum solutions ranging from frames to tempered glass works.',
+    shortDesc: 'Custom Fabrication, Architectural Metal, and Installation.',
+    details: 'Premium aluminum and glass solutions for commercial structures.',
     items: [
-      { name: 'Aluminum Fabrication', specs: 'Frames & structural solutions', img: 'https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Tempered Glass Works', specs: 'Safety-rated & Laminated', img: 'https://images.unsplash.com/photo-1503708995456-48317ca3c541?auto=format&fit=crop&q=80&w=300' },
-      { name: 'Stainless Steel Railings', specs: 'Architectural metal works', img: 'https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&q=80&w=300' }
+      { name: 'Aluminum Fabrication', specs: 'Heavy-duty structural frames', img: 'http://googleusercontent.com/image_collection/image_retrieval/7987300820342170627_0' }
+    ]
+  },
+  {
+    id: 'general',
+    category: 'General Trading',
+    icon: <Inventory sx={{ fontSize: 40 }} />,
+    shortDesc: 'Facility Supplies, Corporate Equipment, and Tools.',
+    details: 'One-stop sourcing for office and industrial facility requirements.',
+    items: [
+      { name: 'Facility Equipment', specs: 'Corporate & industrial supplies', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600' }
     ]
   }
 ];
@@ -76,6 +68,8 @@ const productData = [
 export default function Categories() {
   const [open, setOpen] = useState(false);
   const [selectedCat, setSelectedCat] = useState(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleOpen = (category) => {
     setSelectedCat(category);
@@ -84,46 +78,84 @@ export default function Categories() {
 
   const handleClose = () => setOpen(false);
 
-  const handleInquiry = () => {
-    handleClose();
-    document.getElementById('quotation').scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <Box id="products" sx={{ py: 15, bgcolor: '#f8fafd' }}>
+    <Box id="products" sx={{ py: { xs: 8, md: 12 }, bgcolor: '#f4f7fa' }}>
       <Container maxWidth="xl">
-        <Stack spacing={2} alignItems="center" sx={{ mb: 8, textAlign: 'center' }}>
-          <Typography variant="overline" color="secondary" sx={{ fontWeight: 800, letterSpacing: 3 }}>
-            PRODUCT PORTFOLIO
+        
+        <Stack spacing={1} alignItems="center" sx={{ mb: 8, textAlign: 'center' }}>
+          <Typography variant="overline" sx={{ fontWeight: 800, letterSpacing: 3, color: '#d4af37' }}>
+            TGM PORTFOLIO
           </Typography>
-          <Typography variant="h3" fontWeight={900} color="primary.main">
-            Specialized Solutions
+          <Typography variant={isMobile ? "h4" : "h3"} fontWeight={900} color="primary.main">
+            Our Core Categories
           </Typography>
-          <Box sx={{ width: 60, height: 4, bgcolor: 'secondary.main', borderRadius: 2 }} />
+          <Box sx={{ width: 60, height: 4, bgcolor: '#d4af37', borderRadius: 2, mt: 1 }} />
         </Stack>
 
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={3} justifyContent="center" alignItems="stretch">
           {productData.map((cat) => (
-            <Grid item xs={12} sm={6} md={4} lg={2.4} key={cat.id} sx={{ display: 'flex' }}>
+            <Grid 
+              item 
+              xs={12} 
+              sm={6} 
+              md={4} 
+              lg={2.4} 
+              key={cat.id} 
+              sx={{ display: 'flex', justifyContent: 'center' }} 
+            >
               <Card 
                 onClick={() => handleOpen(cat)}
                 sx={{ 
-                  width: '100%', cursor: 'pointer', borderRadius: 5, border: '1px solid #eef2f6',
-                  transition: '0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  '&:hover': { transform: 'translateY(-10px)', borderColor: 'secondary.main', boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }
+                  width: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  borderRadius: 5, 
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease-in-out',
+                  border: '1px solid #eef2f6',
+                  '&:hover': { 
+                    transform: isMobile ? 'none' : 'translateY(-10px)', 
+                    borderColor: '#d4af37',
+                    boxShadow: '0 20px 40px rgba(10,25,47,0.1)'
+                  }
                 }}
               >
-                <CardContent sx={{ p: 4, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <Box sx={{ bgcolor: 'primary.main', color: 'secondary.main', p: 2, borderRadius: 3, mb: 3, display: 'flex' }}>
+                <CardContent sx={{ 
+                  p: 4, 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'center', 
+                  textAlign: 'center',
+                  flexGrow: 1 
+                }}>
+                  <Box sx={{ 
+                    bgcolor: 'primary.main', 
+                    color: '#d4af37', 
+                    width: 75, height: 75, 
+                    borderRadius: 4, mb: 3,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
                     {cat.icon}
                   </Box>
-                  <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, color: 'primary.main' }}>{cat.category}</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 3, fontSize: '0.9rem' }}>{cat.shortDesc}</Typography>
-                  <Chip 
-                    label="View Items" 
-                    icon={<ArrowIcon style={{ fontSize: '1rem' }} />} 
-                    sx={{ fontWeight: 'bold', cursor: 'pointer', px: 1 }} 
-                  />
+                  
+                  <Typography variant="h6" fontWeight="900" sx={{ 
+                    mb: 1.5, 
+                    color: 'primary.main',
+                    minHeight: '3.5rem',
+                    display: 'flex', 
+                    alignItems: 'center',
+                    lineHeight: 1.2
+                  }}>
+                    {cat.category}
+                  </Typography>
+                  
+                  <Typography variant="body2" color="text.secondary" sx={{ 
+                    flexGrow: 1,
+                    fontSize: '0.95rem'
+                  }}>
+                    {cat.shortDesc}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
@@ -134,49 +166,55 @@ export default function Categories() {
           open={open} 
           onClose={handleClose} 
           fullWidth 
-          maxWidth="sm"
-          PaperProps={{ sx: { borderRadius: 5, p: 1 } }}
+          maxWidth="md" 
+          fullScreen={isMobile}
+          PaperProps={{ sx: { borderRadius: isMobile ? 0 : 6 } }}
         >
           {selectedCat && (
             <>
-              <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pt: 3 }}>
-                <Typography variant="h5" fontWeight="900" color="primary.main">{selectedCat.category}</Typography>
-                <IconButton onClick={handleClose}><CloseIcon /></IconButton>
+              <DialogTitle sx={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center', 
+                bgcolor: 'primary.main', 
+                color: 'white',
+                p: 3
+              }}>
+                <Typography variant="h6" fontWeight="900">{selectedCat.category}</Typography>
+                <IconButton onClick={handleClose} sx={{ color: 'white' }}><CloseIcon /></IconButton>
               </DialogTitle>
               
-              <DialogContent dividers sx={{ py: 3 }}>
-                <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary', lineHeight: 1.6 }}>{selectedCat.details}</Typography>
-                
-                <List disablePadding>
-                  {selectedCat.items.map((item, idx) => (
-                    <ListItem key={idx} sx={{ px: 0, py: 2 }}>
-                      <ListItemIcon>
-                        <Avatar 
-                          variant="rounded" 
-                          src={item.img} 
-                          sx={{ width: 70, height: 70, mr: 2, border: '1px solid #eee', bgcolor: '#f0f0f0' }}
-                        >
-                          <CheckIcon color="disabled" />
-                        </Avatar>
-                      </ListItemIcon>
-                      <ListItemText 
-                        primary={<Typography fontWeight="900" color="primary.main">{item.name}</Typography>} 
-                        secondary={item.specs} 
-                      />
-                    </ListItem>
-                  ))}
-                </List>
+              <DialogContent sx={{ p: { xs: 2, md: 5 }, bgcolor: '#fdfdfd' }}>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 5, fontWeight: 500 }}>
+                  {selectedCat.details}
+                </Typography>
 
-                <Button 
-                  fullWidth variant="contained" size="large" sx={{ mt: 4, py: 2, borderRadius: 3, fontWeight: 'bold' }}
-                  onClick={handleInquiry}
-                >
-                  REQUEST QUOTATION
-                </Button>
+                <Grid container spacing={3}>
+                  {selectedCat.items.map((item, idx) => (
+                    <Grid item xs={12} md={6} key={idx}>
+                      <Card variant="outlined" sx={{ borderRadius: 4, overflow: 'hidden', height: '100%' }}>
+                        <CardMedia
+                          component="img"
+                          height="240"
+                          image={item.img}
+                          alt={item.name}
+                          sx={{ filter: 'brightness(0.95)' }}
+                        />
+                        <CardContent>
+                          <Typography variant="h6" fontWeight="900" color="primary.main">{item.name}</Typography>
+                          <Typography variant="body2" color="#d4af37" fontWeight="800" sx={{ letterSpacing: 0.5 }}>
+                            {item.specs}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
               </DialogContent>
             </>
           )}
         </Dialog>
+
       </Container>
     </Box>
   );

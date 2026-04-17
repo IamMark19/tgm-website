@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Paper, Stack } from '@mui/material';
+import { Box, Container, Typography, Grid, Paper, Stack, useTheme, useMediaQuery } from '@mui/material';
 import { 
   Language as GlobalIcon, 
   Gavel as StandardsIcon, 
@@ -31,21 +31,28 @@ const reasons = [
 ];
 
 export default function Solutions() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
-    <Box id="solutions" sx={{ py: 15, bgcolor: 'primary.main', color: 'white' }}>
+    <Box id="solutions" sx={{ py: { xs: 8, md: 15 }, bgcolor: 'primary.main', color: 'white' }}>
       <Container maxWidth="xl">
-        <Grid container spacing={6} alignItems="center">
+        <Grid container spacing={isMobile ? 4 : 6} alignItems="center">
           
           {/* Left Side: Bold Heading */}
           <Grid item xs={12} md={4}>
-            <Stack spacing={3}>
+            <Stack spacing={2} sx={{ textAlign: isMobile ? 'center' : 'left' }}>
               <Typography variant="overline" color="secondary" sx={{ fontWeight: 800, letterSpacing: 3 }}>
                 THE TGM ADVANTAGE
               </Typography>
-              <Typography variant="h2" fontWeight={900} sx={{ lineHeight: 1.1, color: 'white' }}>
+              <Typography 
+                variant={isMobile ? "h3" : "h2"} 
+                fontWeight={900} 
+                sx={{ lineHeight: 1.1, color: 'white' }}
+              >
                 Why Industry Leaders <span style={{ color: '#d4af37' }}>Choose Us</span>
               </Typography>
-              <Typography variant="body1" sx={{ opacity: 0.9, fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.9)' }}>
+              <Typography variant="body1" sx={{ opacity: 0.9, fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.9)', px: isMobile ? 2 : 0 }}>
                 We combine global reach with local expertise to provide a trading experience that is seamless, secure, and superior.
               </Typography>
             </Stack>
@@ -61,23 +68,23 @@ export default function Solutions() {
                     sx={{
                       p: 4,
                       height: '100%',
-                      bgcolor: 'rgba(255, 255, 255, 0.04)', // Slightly more visible base
+                      bgcolor: 'rgba(255, 255, 255, 0.04)',
                       border: '1px solid rgba(255, 255, 255, 0.1)',
                       borderRadius: 4,
+                      textAlign: isMobile ? 'center' : 'left', // Center card content on mobile
                       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       '&:hover': {
                         bgcolor: 'rgba(255, 255, 255, 0.08)',
-                        borderColor: '#d4af37', // Use explicit Gold color
-                        transform: 'translateY(-10px)',
+                        borderColor: '#d4af37',
+                        transform: isMobile ? 'none' : 'translateY(-10px)', // Disable float on mobile for better UX
                         boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
                       }
                     }}
                   >
-                    <Box sx={{ color: '#d4af37', mb: 2 }}> {/* Gold Icons */}
+                    <Box sx={{ color: '#d4af37', mb: 2, display: 'flex', justifyContent: isMobile ? 'center' : 'flex-start' }}>
                       {reason.icon}
                     </Box>
                     
-                    {/* Explicitly White Title for Maximum Readability */}
                     <Typography 
                       variant="h6" 
                       fontWeight="900" 
