@@ -17,9 +17,11 @@ const productData = [
     shortDesc: 'X-ray Baggage Scanners, Metal Detectors, and CCTV Systems.',
     details: 'Globally certified security solutions for high-traffic environments. High-performance scanning and detection technology.',
     items: [
-      { name: 'X-ray Baggage Scanners', specs: 'Dual-view / Single-view options', img: 'http://googleusercontent.com/image_collection/image_retrieval/10822366264460149617_0' },
-      { name: 'Walk-Through Metal Detectors', specs: '33-zone high sensitivity', img: 'http://googleusercontent.com/image_collection/image_retrieval/1835039443100430874_0' },
-      { name: 'CCTV Systems', specs: '4K IP & Thermal Imaging', img: 'http://googleusercontent.com/image_collection/image_retrieval/18256075429679014611_0' }
+      { name: 'X-ray Baggage Scanners', specs: 'Dual-view / Single-view options', img: '/product/baggage-xray-machine.jpg' },
+      { name: 'Walk-Through Metal Detectors', specs: '33-zone high sensitivity', img: '/product/walk-through-metal-detector.jpg' },
+      { name: 'CCTV Systems', specs: '4K IP & Thermal Imaging', img: '/product/cctv-camera.jpg' },
+      { name: 'Access Control Systems', specs: 'Biometric & RFID solutions', img: '/product/access-control.jpg' },
+      { name: 'Body Worn Camera', specs: 'HD Video & Audio Recording', img: '/product/body-worn-camera.jpg' }
     ]
   },
   {
@@ -29,8 +31,8 @@ const productData = [
     shortDesc: 'Enterprise Networking, Smart City, and Server Solutions.',
     details: 'Modernizing infrastructure with high-speed networking and IoT integrations.',
     items: [
-      { name: 'Smart City Systems', specs: 'IoT Traffic & Lighting', img: 'http://googleusercontent.com/image_collection/image_retrieval/9059464738232550843_0' },
-      { name: 'Server Infrastructure', specs: 'High-density rack solutions', img: 'http://googleusercontent.com/image_collection/image_retrieval/1917646646846251908_0' }
+      { name: 'Smart City Systems', specs: 'IoT Traffic & Lighting', img: '/product/smart-city.jpg' },
+      { name: 'Server Infrastructure', specs: 'High-density rack solutions', img: '/product/enterprise-networking-infrastructure.jpg' }
     ]
   },
   {
@@ -40,7 +42,7 @@ const productData = [
     shortDesc: 'Precision Testing, Calibration, and Industrial Safety Equipment.',
     details: 'Technical instruments for engineering and maintenance operations.',
     items: [
-      { name: 'Testing Instruments', specs: 'Calibration-ready tools', img: 'http://googleusercontent.com/image_collection/image_retrieval/15504085617401204923_0' }
+      { name: 'Industrial Equipment', specs: 'Calibration-ready tools', img: '/product/industrial-equipment.jpg' }
     ]
   },
   {
@@ -50,7 +52,8 @@ const productData = [
     shortDesc: 'Custom Fabrication, Architectural Metal, and Installation.',
     details: 'Premium aluminum and glass solutions for commercial structures.',
     items: [
-      { name: 'Aluminum Fabrication', specs: 'Heavy-duty structural frames', img: 'http://googleusercontent.com/image_collection/image_retrieval/7987300820342170627_0' }
+      { name: 'Aluminum Fabrication', specs: 'Heavy-duty structural frames', img: '/product/aluminum-fabrication.jpg' },
+      { name: 'Glass Installation', specs: 'High-performance glazing solutions', img: '/product/glass-works.jpg' }
     ]
   },
   {
@@ -60,7 +63,9 @@ const productData = [
     shortDesc: 'Facility Supplies, Corporate Equipment, and Tools.',
     details: 'One-stop sourcing for office and industrial facility requirements.',
     items: [
-      { name: 'Facility Equipment', specs: 'Corporate & industrial supplies', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600' }
+      { name: 'Facility Equipment', specs: 'Corporate & industrial supplies', img: '/product/facility-equipment.jpg' },
+      { name: 'General Tools', specs: 'Hand tools, power tools, and accessories', img: '/product/general-tools.jpg' },
+      { name: 'Office Supplies', specs: 'Furniture, stationery, and more', img: '/product/office-supplies.jpg' }
     ]
   }
 ];

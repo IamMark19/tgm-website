@@ -49,7 +49,7 @@ export default function Hero() {
               </Button>
 
               {/* Jumps to Contact Section */}
-              <Button 
+              {/* <Button 
                 variant="outlined" 
                 onClick={() => scrollToSection('quotation')}
                 sx={{ 
@@ -62,7 +62,7 @@ export default function Hero() {
                 }}
               >
                 GET A QUOTE
-              </Button>
+              </Button> */}
             </Stack>
           </Grid>
         </Grid>

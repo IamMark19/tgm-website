@@ -108,7 +108,7 @@ export default function Navbar() {
 
             {/* Action Buttons */}
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Button 
+              {/* <Button 
                 variant="contained" 
                 color="secondary" 
                 onClick={() => handleScroll('quotation')}
@@ -120,7 +120,7 @@ export default function Navbar() {
                 }}
               >
                 INQUIRE NOW
-              </Button>
+              </Button> */}
 
               <IconButton 
                 onClick={handleDrawerToggle}
@@ -163,7 +163,7 @@ export default function Navbar() {
             </ListItem>
           ))}
           
-          <Box sx={{ mt: 4 }}>
+          {/* <Box sx={{ mt: 4 }}>
             <Button 
               fullWidth 
               variant="contained" 
@@ -173,7 +173,7 @@ export default function Navbar() {
             >
               INQUIRE NOW
             </Button>
-          </Box>
+          </Box> */}
         </List>
       </Drawer>
     </>
