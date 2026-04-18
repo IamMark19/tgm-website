@@ -52,7 +52,7 @@ export default function CoreActivities() {
             Core Business <span style={{ color: '#d4af37' }}>Activities</span>
           </Typography>
           <Box sx={{ width: 60, height: 4, bgcolor: 'secondary.main', borderRadius: 2 }} />
-          <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: '800px' }}>
+          <Typography variant="body1" sx={{ color: 'text.secondary', }}>
             Thirdy Golden Master provides a comprehensive end-to-end service model, managing the entire lifecycle of equipment supply and technical integration.
           </Typography>
         </Stack>
