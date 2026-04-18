@@ -17,9 +17,11 @@ const productData = [
     shortDesc: 'X-ray Baggage Scanners, Metal Detectors, and CCTV Systems.',
     details: 'Globally certified security solutions for high-traffic environments. High-performance scanning and detection technology.',
     items: [
-      { name: 'X-ray Baggage Scanners', specs: 'Dual-view / Single-view options', img: 'http://googleusercontent.com/image_collection/image_retrieval/10822366264460149617_0' },
-      { name: 'Walk-Through Metal Detectors', specs: '33-zone high sensitivity', img: 'http://googleusercontent.com/image_collection/image_retrieval/1835039443100430874_0' },
-      { name: 'CCTV Systems', specs: '4K IP & Thermal Imaging', img: 'http://googleusercontent.com/image_collection/image_retrieval/18256075429679014611_0' }
+      { name: 'X-ray Baggage Scanners', specs: 'Dual-view / Single-view options', img: '/product/baggage-xray-machine.jpg' },
+      { name: 'Walk-Through Metal Detectors', specs: '33-zone high sensitivity', img: '/product/walk-through-metal-detector.jpg' },
+      { name: 'CCTV Systems', specs: '4K IP & Thermal Imaging', img: '/product/cctv-camera.jpg' },
+      { name: 'Access Control Systems', specs: 'Biometric & RFID solutions', img: '/product/access-control.jpg' },
+      { name: 'Body Worn Camera', specs: 'HD Video & Audio Recording', img: '/product/body-worn-camera.jpg' }
     ]
   },
   {
@@ -40,7 +42,7 @@ const productData = [
     shortDesc: 'Precision Testing, Calibration, and Industrial Safety Equipment.',
     details: 'Technical instruments for engineering and maintenance operations.',
     items: [
-      { name: 'Testing Instruments', specs: 'Calibration-ready tools', img: 'http://googleusercontent.com/image_collection/image_retrieval/15504085617401204923_0' }
+      { name: 'Industrial Equipment', specs: 'Calibration-ready tools', img: '/product/industrial-equipment.jpg' }
     ]
   },
   {
@@ -50,7 +52,8 @@ const productData = [
     shortDesc: 'Custom Fabrication, Architectural Metal, and Installation.',
     details: 'Premium aluminum and glass solutions for commercial structures.',
     items: [
-      { name: 'Aluminum Fabrication', specs: 'Heavy-duty structural frames', img: 'http://googleusercontent.com/image_collection/image_retrieval/7987300820342170627_0' }
+      { name: 'Aluminum Fabrication', specs: 'Heavy-duty structural frames', img: '/product/aluminum-fabrication.jpg' },
+      { name: 'Glass Installation', specs: 'High-performance glazing solutions', img: '/product/glass-works.jpg' }
     ]
   },
   {
