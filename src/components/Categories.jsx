@@ -29,8 +29,8 @@ const productData = [
     shortDesc: 'Enterprise Networking, Smart City, and Server Solutions.',
     details: 'Modernizing infrastructure with high-speed networking and IoT integrations.',
     items: [
-      { name: 'Smart City Systems', specs: 'IoT Traffic & Lighting', img: 'http://googleusercontent.com/image_collection/image_retrieval/9059464738232550843_0' },
-      { name: 'Server Infrastructure', specs: 'High-density rack solutions', img: 'http://googleusercontent.com/image_collection/image_retrieval/1917646646846251908_0' }
+      { name: 'Smart City Systems', specs: 'IoT Traffic & Lighting', img: '/product/smart-city.jpg' },
+      { name: 'Server Infrastructure', specs: 'High-density rack solutions', img: '/product/enterprise-networking.jpg' }
     ]
   },
   {
@@ -60,7 +60,9 @@ const productData = [
     shortDesc: 'Facility Supplies, Corporate Equipment, and Tools.',
     details: 'One-stop sourcing for office and industrial facility requirements.',
     items: [
-      { name: 'Facility Equipment', specs: 'Corporate & industrial supplies', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600' }
+      { name: 'Office Furniture', specs: 'Desks, chairs, and workstations', img: '/product/office-furniture.jpg' },
+      { name: 'Construction Materials', specs: 'Building supplies and equipment', img: '/product/construction-materials.jpg' },
+      { name: 'Office Supplies', specs: 'Furniture, stationery, and more', img: '/product/office-supplies.jpg' }
     ]
   }
 ];
