@@ -32,7 +32,7 @@ const productData = [
     details: 'Modernizing infrastructure with high-speed networking and IoT integrations.',
     items: [
       { name: 'Smart City Systems', specs: 'IoT Traffic & Lighting', img: '/product/smart-city.jpg' },
-      { name: 'Server Infrastructure', specs: 'High-density rack solutions', img: '/product/enterprise-networking.jpg' }
+      { name: 'Server Infrastructure', specs: 'High-density rack solutions', img: '/product/Enterprise-networking.jpg' }
     ]
   },
   {
@@ -64,7 +64,7 @@ const productData = [
     details: 'One-stop sourcing for office and industrial facility requirements.',
     items: [
       { name: 'Office Furniture', specs: 'Desks, chairs, and workstations', img: '/product/office-furniture.jpg' },
-      { name: 'Construction Materials', specs: 'Building supplies and equipment', img: '/product/construction-materials.jpg' },
+      { name: 'Construction Materials', specs: 'Building supplies and equipment', img: '/product/Construction-Materials.jpg' },
       { name: 'Office Supplies', specs: 'Furniture, stationery, and more', img: '/product/office-supplies.jpg' }
     ]
   }
