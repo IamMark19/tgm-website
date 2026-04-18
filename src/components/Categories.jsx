@@ -18,7 +18,7 @@ const productData = [
     details: 'Globally certified security solutions for high-traffic environments. High-performance scanning and detection technology.',
     items: [
       { name: 'X-ray Baggage Scanners', specs: 'Dual-view / Single-view options', img: '/product/baggage-xray-machine.jpg' },
-      { name: 'Walk-Through Metal Detectors', specs: '33-zone high sensitivity', img: '/product/walk-through-metal-detector.png' },
+      { name: 'Walk-Through Metal Detectors', specs: '', img: '/product/walk-through-metal-detector.png' },
       { name: 'CCTV Systems', specs: '4K IP & Thermal Imaging', img: '/product/cctv-camera.jpg' },
       { name: 'Access Control Systems', specs: 'Biometric & RFID solutions', img: '/product/access-control.jpg' },
       { name: 'Body Worn Camera', specs: 'HD Video & Audio Recording', img: '/product/body-worn-camera.jpg' }
