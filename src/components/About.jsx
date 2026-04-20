@@ -161,7 +161,7 @@ export default function About() {
         </Box> */}
         <Box sx={{ textAlign: 'center', mb: { xs: 8, md: 10 } }}>
   <Typography variant={isMobile ? "h4" : "h3"} fontWeight="900" color="primary.main" sx={{ mb: 2 }}>
-    The Five Pillars of TGM
+    The Five Pillars of TGMTI
   </Typography>
   <Typography variant="body1" color="text.secondary" sx={{ mb: { xs: 4, md: 8 }, px: 2 }}>
     Our values define our commitment to our clients and our country.
