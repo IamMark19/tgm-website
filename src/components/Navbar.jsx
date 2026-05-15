@@ -5,7 +5,8 @@ import {
 } from '@mui/material';
 import { 
   Menu as MenuIcon, 
-  Close as CloseIcon 
+  Close as CloseIcon,
+  Email as EmailIcon 
 } from '@mui/icons-material';
 
 const navItems = [
@@ -17,6 +18,8 @@ const navItems = [
   { name: 'WHY CHOOSE US', id: 'solutions' },
   { name: 'CONTACT US', id: 'footer' }
 ];
+
+const WEBMAIL_URL = "https://webmail.thirdygoldenmaster.com/";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -46,15 +49,14 @@ export default function Navbar() {
             >
               <Box
                 component="img"
-                src="/company-logo.jpg" // Update extension if it is .jpg or .svg
+                src="/company-logo.jpg" 
                 alt="Thirdy Golden Master Logo"
                 sx={{ 
-                  height: { xs: 40, md: 50 }, // Larger on desktop
+                  height: { xs: 40, md: 50 }, 
                   width: 'auto',
                   objectFit: 'contain'
                 }}
                 onError={(e) => {
-                  // Fallback if logo file is missing
                   e.target.style.display = 'none';
                 }}
               />
@@ -107,20 +109,26 @@ export default function Navbar() {
             </Box>
 
             {/* Action Buttons */}
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {/* <Button 
-                variant="contained" 
-                color="secondary" 
-                onClick={() => handleScroll('quotation')}
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              {/* Webmail Button - Desktop */}
+              <Button 
+                component="a"
+                href={WEBMAIL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outlined" 
+                size="small"
+                startIcon={<EmailIcon />}
                 sx={{ 
-                  fontWeight: '900', 
+                  fontWeight: '800', 
                   display: { xs: 'none', md: 'inline-flex' },
-                  px: 3,
-                  borderRadius: 2
+                  borderRadius: 1.5,
+                  fontSize: '0.7rem',
+                  px: 2
                 }}
               >
-                INQUIRE NOW
-              </Button> */}
+                WEBMAIL
+              </Button>
 
               <IconButton 
                 onClick={handleDrawerToggle}
@@ -163,17 +171,21 @@ export default function Navbar() {
             </ListItem>
           ))}
           
-          {/* <Box sx={{ mt: 4 }}>
+          <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid #eee' }}>
             <Button 
               fullWidth 
+              component="a"
+              href={WEBMAIL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               variant="contained" 
-              color="secondary" 
-              onClick={() => handleScroll('quotation')}
-              sx={{ fontWeight: '900', py: 1.5, borderRadius: 2 }}
+              color="primary" 
+              startIcon={<EmailIcon />}
+              sx={{ fontWeight: '800', py: 1, borderRadius: 2, fontSize: '0.8rem' }}
             >
-              INQUIRE NOW
+              ACCESS WEBMAIL
             </Button>
-          </Box> */}
+          </Box>
         </List>
       </Drawer>
     </>
