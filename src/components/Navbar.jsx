@@ -19,7 +19,7 @@ const navItems = [
   { name: 'CONTACT US', id: 'footer' }
 ];
 
-const WEBMAIL_URL = "https://webmail.thirdygoldenmaster.com/";
+const WEBMAIL_URL = "https://shu23.u-srv.com:2003/mail/";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);

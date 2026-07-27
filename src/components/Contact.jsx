@@ -11,7 +11,8 @@ import {
   Download as DownloadIcon,
   ContactPage as CardIcon,
   QueryStats,
-  Schedule
+  Schedule,
+  Business as BranchIcon
 } from '@mui/icons-material';
 
 export default function Contact() {
@@ -69,7 +70,6 @@ export default function Contact() {
                 color="primary" 
                 size="small" 
                 startIcon={<DownloadIcon />}
-                // This ensures it looks at the root of wherever the site is hosted
                 href={`${window.location.origin}/TGM-Calling-Card.pdf`}
                 download="TGM_Business_Card.pdf"
                 sx={{ borderRadius: 2, fontWeight: 'bold' }}
@@ -81,8 +81,13 @@ export default function Contact() {
             <Stack spacing={4} sx={{ mb: 6 }}>
               <ContactInfo 
                 icon={<LocationOnIcon />} 
-                title="Office Address" 
+                title="Head Office Address" 
                 detail="276-D Dansalan St., Barangay Barangka Ilaya, Mandaluyong City" 
+              />
+              <ContactInfo 
+                icon={<BranchIcon />} 
+                title="Branch Address" 
+                detail="Unit 128 WEB-JET Complex, Lot 1V Molino-Paliparan Road, Pasong Buaya II, Imus City, Cavite" 
               />
               <ContactInfo 
                 icon={<PhoneIcon />} 
