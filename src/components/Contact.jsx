@@ -62,7 +62,7 @@ export default function Contact() {
                   Digital Business Card
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  Download for your records (PDF)
+                  Download for your records (JPG)
                 </Typography>
               </Box>
              <Button 
@@ -71,7 +71,7 @@ export default function Contact() {
                 size="small" 
                 startIcon={<DownloadIcon />}
                 href={`${window.location.origin}/TGM-Calling-Card.jpg`}
-                download="TGM_Business_Card.pdf"
+                download="TGM_Business_Card.jpg"
                 sx={{ borderRadius: 2, fontWeight: 'bold' }}
                 >
                 Download
