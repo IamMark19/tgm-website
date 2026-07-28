@@ -19,7 +19,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
   // Update this path to where your PDF is stored (usually in the public folder)
-  const PDF_URL = "/TGM-Calling-Card.pdf"; 
+  const PDF_URL = "/TGM-Calling-Card.jpg"; 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,7 +70,7 @@ export default function Contact() {
                 color="primary" 
                 size="small" 
                 startIcon={<DownloadIcon />}
-                href={`${window.location.origin}/TGM-Calling-Card.pdf`}
+                href={`${window.location.origin}/TGM-Calling-Card.jpg`}
                 download="TGM_Business_Card.pdf"
                 sx={{ borderRadius: 2, fontWeight: 'bold' }}
                 >
@@ -86,7 +86,7 @@ export default function Contact() {
               />
               <ContactInfo 
                 icon={<BranchIcon />} 
-                title="Branch Address" 
+                title="Satellite Office Address" 
                 detail="Unit 128 WEB-JET Complex, Lot 1V Molino-Paliparan Road, Pasong Buaya II, Imus City, Cavite" 
               />
               <ContactInfo 
